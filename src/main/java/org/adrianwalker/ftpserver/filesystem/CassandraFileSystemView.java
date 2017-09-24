@@ -133,6 +133,8 @@ public final class CassandraFileSystemView implements FileSystemView {
 
   private FtpFile createDirectory(final String path) {
 
+    LOGGER.debug("path = {}", path);
+
     File directory = new File();
     directory.setName(Paths.get(path).getFileName().toString());
     directory.setDirectory(true);

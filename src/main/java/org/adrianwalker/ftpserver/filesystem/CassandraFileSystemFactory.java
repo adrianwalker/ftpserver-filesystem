@@ -16,6 +16,12 @@ public final class CassandraFileSystemFactory implements FileSystemFactory {
 
   public CassandraFileSystemFactory(final FileSystemController controller) {
 
+    LOGGER.debug("controller = {}", controller);
+
+    if (null == controller) {
+      throw new IllegalArgumentException("controller is null");
+    }
+
     this.controller = controller;
   }
 
